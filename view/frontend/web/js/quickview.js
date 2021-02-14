@@ -18,18 +18,18 @@ define([
 
             // add buttons inside all container
             if (this.options.append_buttons.enable) {
-                $(this.options.append_buttons.container).each(function (index, element) {
+                $(this.options.append_buttons.elements).each(function (index, element) {
                     var idProductElement = $(element).find(this.options.append_buttons.id_product.selector);
                     if (idProductElement.length) {
                         // search id product
                         var idProduct = idProductElement.data(this.options.append_buttons.id_product.data);
 
                         // prepare html
-                        var html = this.options.append_buttons.html;
+                        var html = this.options.append_buttons.button.html;
                         html = html.replace(/\{id\}/, idProduct);
 
                         // add html
-                        $(element).append(html);
+                        $(element).find(this.options.append_buttons.button.container).append(html);
                     }
                 }.bind(this));
             }

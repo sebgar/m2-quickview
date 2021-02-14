@@ -11,8 +11,11 @@ if ($block->isEnable()) {
         ],
         'append_buttons' => [
             'enable' => true,
-            'container' => '.product-items .product-item',
-            'html' => '<a class="quickview-button btn" href="#" data-product-id="{id}">'.__('Quick view').'</span></a>',
+            'elements' => '.product-items .product-item',
+            'button' => [
+                'html' => '<a class="quickview-button btn" href="#" data-product-id="{id}">'.__('Quick view').'</span></a>',
+                'container' => '.product-item-info .product-item-inner'
+            ],
             'id_product' => [
                 'selector' => '[data-role=priceBox]',
                 'data' => 'product-id'
