@@ -1,0 +1,38 @@
+<?php
+/** @var \Sga\QuickView\Block\Popin $block */
+
+if ($block->isEnable()) {
+    $popinData = [
+        'url' => $block->getUrl('catalog/product/view'),
+        'elements' => [
+            'button' => '.quickview-button',
+            'modal' => '#quickview-popin',
+            'modal_content' => '#quickview-popin',
+        ],
+        'append_buttons' => [
+            'enable' => true,
+            'container' => '.product-items .product-item',
+            'html' => '<a class="quickview-button btn" href="#" data-product-id="{id}">'.__('Quick view').'</span></a>',
+            'id_product' => [
+                'selector' => '[data-role=priceBox]',
+                'data' => 'product-id'
+            ]
+        ],
+        'popup_options' => [
+            'type' => 'popup',
+            'modalClass' => 'popup-quickview',
+            'responsive' => true,
+            'innerScroll' => true,
+            'buttons' => []
+        ]
+    ];
+    ?>
+
+    <div id="quickview-popin"></div>
+
+    <script type="text/x-magento-init">
+    {
+        "*":{"quickview": <?= json_encode($popinData) ?>}
+    }
+    </script>
+<?php } ?>
