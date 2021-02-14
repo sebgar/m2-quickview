@@ -1,11 +1,13 @@
-# m2-productcopy
+# m2-quickview
 
-Gestion de la copie des données produits entre store qui utilise la même langue
+Popin de visualisation du produit depuis les listings
+
+[documentation](doc/doc.md)
 
 ## Installation
 
 Via composer
 
 ```bash
-composer require sebgar/m2-productcopy
+composer require sebgar/m2-quickview
 ```
